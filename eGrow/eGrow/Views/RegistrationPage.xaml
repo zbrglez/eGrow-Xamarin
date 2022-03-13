@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eGrow.Views.RegistrationPage"
+>
+    <ContentPage.Content>
+        <Grid BackgroundColor="WhiteSmoke">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="160" />
+                <RowDefinition Height="230"/>
+            </Grid.RowDefinitions>
+            <Image Source="eGrowLogotip.png" Grid.RowSpan="3" Opacity="0.3" Aspect="AspectFit" />
+            
+            <Label Grid.Row="0" Margin="0,30,0,0" VerticalTextAlignment="Center" Text="Registracija" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="#204108"></Label>
+            
+            <StackLayout Grid.Row="1"  BackgroundColor="Transparent" Padding="10,0,10,0">
+                <Frame OutlineColor="#204108" HorizontalOptions="FillAndExpand" HasShadow="True" Margin="20,10,20,10" CornerRadius="20" Padding="10" BackgroundColor="Transparent" >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="uporabnik.png" HeightRequest="20" Margin="10,0,0,0"/>
+                        <Entry x:Name="entry_uporabnisko" Placeholder="Uporabniško ime" HorizontalOptions="FillAndExpand"  TextColor="#204108" PlaceholderColor="#204108"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent" OutlineColor="#204108" HorizontalOptions="FillAndExpand"  HasShadow="True" Margin="20,0,20,10"  CornerRadius="20" Padding="10"  >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="geslo.png" HeightRequest="20" Margin="10,0,0,0"/>
+                        <Entry Placeholder="Geslo" x:Name="entry_geslo" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="#204108" PlaceholderColor="#204108"></Entry>
+                    </StackLayout>
+                </Frame>
+                <!-- API ma še pri registraciji vpis emaila. drgač spusti notri tut brez te vrednosti -->
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                <Label Grid.Row="0" x:Name="registracijatekst" Margin="40,0,40,0" VerticalTextAlignment="Center" TextColor="#204108"></Label>
+                <Button Clicked="Button_Clicked" Margin="20,5,20,5" CornerRadius="20" BackgroundColor="#89a72d" Text="REGISTRACIJA"></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:eGrow.ViewModels" xmlns:model="clr-namespace:eGrow.Models" x:DataType="viewmodels:RastlineViewModel"
+             x:Class="eGrow.Views.Rastline">
+    <StackLayout>
+        <ListView x:Name="plantslist" ItemsSource="{Binding plants}" HasUnevenRows="True" Margin="0,-7,0,0" ItemTapped="plantslist_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Plant">
+                    <ViewCell>
+                        <Grid Padding="30">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0">
+                                <Label TextColor="Black" FontSize="18" FontAttributes="Bold" Text="{Binding plantName}" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="1">
+                                <Frame CornerRadius="20" HasShadow="True" IsClippedToBounds="True" Padding="20">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                                        <Frame CornerRadius="100"   HeightRequest="100"  WidthRequest="100" HorizontalOptions="Center" Padding="40" IsClippedToBounds="True">
+                                            <Image Source="plant.png" />
+                                        </Frame>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Padding="15,10,15,10">
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding optimalAmbientTemperatureCelsius}"/>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="°C"/>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text=" | "/>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding fullyGrownCm}"/>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="cm"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="15,0,15,0">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                                <Image HeightRequest="20" Source="light.png" />
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding optimalUvIndex}"/>
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="UVI"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="18" Text=" | "/>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                                <Image HeightRequest="20" Source="water.png" />
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding optimalLeafWetness}"/>
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="%"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="18" Text=" | "/>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                                <Image HeightRequest="20" Source="plant.png" />
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding optimalAmbientHumidityPercentage}"/>
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="%"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

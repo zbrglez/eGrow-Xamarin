@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:eGrow.ViewModels" xmlns:model="clr-namespace:eGrow.Models" x:DataType="viewmodels:NapraveViewModel"
+             x:Class="eGrow.Views.Naprave">
+    <StackLayout>
+        <ListView x:Name="plantslist" ItemsSource="{Binding naprave}" HasUnevenRows="True" Margin="0,-7,0,0" ItemTapped="plantslist_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:Device">
+                    <ViewCell>
+                        <Grid Padding="30">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0">
+                                <Label TextColor="Black" FontSize="18" FontAttributes="Bold" Text="{Binding deviceGuid}" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="1">
+                                <Frame CornerRadius="20" HasShadow="True" IsClippedToBounds="True" Padding="0">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="0,20,0,0" >
+                                        <Frame CornerRadius="100"   HeightRequest="100"  WidthRequest="100" HorizontalOptions="Center" Padding="40" IsClippedToBounds="True">
+                                            <Image Source="plant.png" />
+                                        </Frame>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Padding="15,10,15,10">
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="20" Text="{Binding deviceGuid }"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Padding="15,0,15,20">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                                <Image HeightRequest="20" Source="water.png" />
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding waterTankLevel}"/>
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="L"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Label VerticalOptions="Start" TextColor="Gray" FontSize="18" Text=" | "/>
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                                <Image HeightRequest="20" Source="plant.png" />
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" >
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="{Binding fertilizerLevel }"/>
+                                                    <Label VerticalOptions="Start" TextColor="Gray" FontSize="14" Text="L"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

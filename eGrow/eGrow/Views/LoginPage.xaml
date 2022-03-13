@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="eGrow.Views.LoginPage"
+             Shell.NavBarIsVisible="True">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#e1e9ca">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="160" />
+                <RowDefinition Height="230"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <Image Source="eGrowLogotip.png" HeightRequest="150" Margin="0,40,0,0"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1"  BackgroundColor="Transparent" Padding="10,0,10,0">
+                <Frame OutlineColor="#204108" HorizontalOptions="FillAndExpand" HasShadow="True" Margin="20,10,20,10" CornerRadius="20" Padding="10" BackgroundColor="Transparent" >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="uporabnik.png" HeightRequest="20" Margin="10,0,0,0"/>
+                        <Entry x:Name="entry_uporabnisko" Placeholder="Uporabniško ime" HorizontalOptions="FillAndExpand"  TextColor="#204108" PlaceholderColor="#204108"></Entry>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent" OutlineColor="#204108" HorizontalOptions="FillAndExpand"  HasShadow="True" Margin="20,0,20,10"  CornerRadius="20" Padding="10"  >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="geslo.png" HeightRequest="20" Margin="10,0,0,0"/>
+                        <Entry Placeholder="Geslo" x:Name="entry_geslo" IsPassword="True" HorizontalOptions="FillAndExpand" TextColor="#204108" PlaceholderColor="#204108"></Entry>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                <Label Grid.Row="0" x:Name="prijavatekst" Margin="40,0,40,0" VerticalTextAlignment="Center" TextColor="#204108"></Label>
+                <Button Clicked="Button_Prijava" Margin="20,5,20,5" CornerRadius="20" BackgroundColor="#89a72d" Text="PRIJAVA"></Button>
+                <Button Grid.Row="0" Text="Še nimate računa? Registrirajte se!" BackgroundColor="Transparent" HorizontalOptions="Center" TextColor="#204108" Clicked="Button_Clicked" ></Button>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

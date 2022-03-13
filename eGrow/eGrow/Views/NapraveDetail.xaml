@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eGrow.Views.NapraveDetail">
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+            <Label FontSize="28" x:Name="naziv1" TextColor="Black" />
+            <Image Margin="30" HeightRequest="100" Source="plant.png" />
+            <Frame CornerRadius="20" HasShadow="True" IsClippedToBounds="True" Padding="20">
+                <StackLayout>
+                    <Label Text="Podatki o napravi" FontSize="18"  />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Naziv rastline:" TextColor="#89a72d" />
+                        <Label x:Name="naziv2"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nivo rezervoarja za vodo:" TextColor="#89a72d" />
+                        <Label x:Name="watertank"/>
+                        <Label Text="L" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nivo gnojila:" TextColor="#89a72d" />
+                        <Label x:Name="fertilizer"/>
+                        <Label Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
